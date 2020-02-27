@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@id/start"
+        motion:constraintSetEnd="@id/end">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="40"
+                motion:motionTarget="@id/previousButton" />
+
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="45"
+                motion:motionTarget="@id/previousButton" />
+
+            <KeyAttribute
+                motion:framePosition="65"
+                motion:motionTarget="@id/previousButton" >
+                <CustomAttribute
+                    motion:attributeName="textColor"
+                    motion:customColorValue="#FFFFFF" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                motion:framePosition="80"
+                motion:motionTarget="@id/previousButton" >
+                <CustomAttribute
+                    motion:attributeName="textColor"
+                    motion:customColorValue="#92000000" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                android:translationY="0dp"
+                motion:framePosition="75"
+                motion:motionTarget="@id/nextButton" >
+            </KeyAttribute>
+
+            <KeyAttribute
+                android:translationY="50dp"
+                motion:framePosition="100"
+                motion:motionTarget="@id/nextButton" >
+            </KeyAttribute>
+
+            <KeyAttribute
+                android:translationX="70dp"
+                motion:framePosition="75"
+                motion:motionTarget="@id/finishButton" >
+                <CustomAttribute
+                    motion:attributeName="textColor"
+                    motion:customColorValue="#92000000" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                android:translationX="0dp"
+                motion:framePosition="100"
+                motion:motionTarget="@id/finishButton" >
+            </KeyAttribute>
+
+            <KeyAttribute
+                motion:framePosition="0"
+                motion:motionTarget="@id/background"
+                motion:transitionEasing="accelerate">
+                <CustomAttribute
+                    motion:attributeName="backgroundColor"
+                    motion:customColorValue="#A5C63A" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                motion:framePosition="50"
+                motion:motionTarget="@id/background"
+                motion:transitionEasing="accelerate">
+                <CustomAttribute
+                    motion:attributeName="backgroundColor"
+                    motion:customColorValue="#464E69" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                motion:framePosition="100"
+                motion:motionTarget="@id/background"
+                motion:transitionEasing="accelerate">
+                <CustomAttribute
+                    motion:attributeName="backgroundColor"
+                    motion:customColorValue="#FADB6E" />
+            </KeyAttribute>
+
+        </KeyFrameSet>
+
+
+    </Transition>
+
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@id/previousButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+
+        <Constraint
+            android:id="@id/finishButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toEndOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@id/previousButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+
+        <Constraint
+            android:id="@id/finishButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+    </ConstraintSet>
+</MotionScene>

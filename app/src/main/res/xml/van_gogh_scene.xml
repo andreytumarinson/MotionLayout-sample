@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@layout/activity_van_gogh_end"
+        motion:constraintSetStart="@layout/activity_vah_gogh_start"
+        motion:duration="500">
+
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:touchAnchorId="@id/shareLayout"
+            motion:touchAnchorSide="top"/>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:framePosition="0"
+                motion:motionTarget="@id/hamburgerIcon">
+                <CustomAttribute
+                    motion:attributeName="colorFilter"
+                    motion:customColorValue="#FFFFFF"/>
+            </KeyAttribute>
+
+            <KeyAttribute
+                motion:framePosition="100"
+                motion:motionTarget="@id/hamburgerIcon">
+                <CustomAttribute
+                    motion:attributeName="colorFilter"
+                    motion:customColorValue="#90caf9"/>
+
+            </KeyAttribute>
+        </KeyFrameSet>
+
+    </Transition>
+
+
+</MotionScene>

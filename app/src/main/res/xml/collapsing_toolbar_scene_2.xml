@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetStart="@layout/activity_collapsing_toolbar_start_2"
+        app:constraintSetEnd="@layout/activity_collapsing_toolbar_end_2">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/toolbarCoverImage"
+            app:touchAnchorSide="bottom"/>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:framePosition="0"
+                motion:motionTarget="@id/backButton" >
+                <CustomAttribute
+                    app:attributeName="colorFilter"
+                    app:customColorValue="#fff"/>
+            </KeyAttribute>
+
+            <KeyAttribute
+                motion:framePosition="100"
+                motion:motionTarget="@id/backButton" >
+                <CustomAttribute
+                    app:attributeName="colorFilter"
+                    app:customColorValue="#000"/>
+            </KeyAttribute>
+
+
+
+            <KeyAttribute
+                motion:framePosition="0"
+                motion:motionTarget="@id/title" >
+                <CustomAttribute
+                    app:attributeName="textColor"
+                    app:customColorValue="#000"/>
+            </KeyAttribute>
+
+            <KeyAttribute
+                motion:framePosition="100"
+                motion:motionTarget="@id/title" >
+                <CustomAttribute
+                    app:attributeName="textColor"
+                    app:customColorValue="#33BBA8"/>
+            </KeyAttribute>
+
+            <KeyPosition
+                app:keyPositionType="pathRelative"
+                app:framePosition="85"
+                app:motionTarget="@id/title"
+                app:percentX="1"/>
+
+            <!-- Text size animation -->
+            <!--<KeyAttribute
+                motion:framePosition="0"
+                motion:motionTarget="@id/title" >
+                <CustomAttribute
+                    motion:attributeName="textSize"
+                    motion:customDimension="10sp" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                motion:framePosition="85"
+                motion:motionTarget="@id/title" >
+                <CustomAttribute
+                    motion:attributeName="textSize"
+                    motion:customDimension="7sp" />
+            </KeyAttribute>-->
+
+            <!-- Text scale animation -->
+            <KeyAttribute
+                motion:framePosition="85"
+                motion:motionTarget="@id/title"
+                android:scaleX="0.75"
+                android:scaleY="0.75">
+            </KeyAttribute>
+
+            <KeyPosition
+                app:keyPositionType="pathRelative"
+                app:framePosition="85"
+                app:motionTarget="@id/subtitle"
+                app:percentX="1" />
+
+
+
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="30"
+                motion:motionTarget="@id/subtitle" />
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="85"
+                motion:motionTarget="@id/subtitle" />
+
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="20"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                motion:motionTarget="@id/toolbarImage" />
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="60"
+                android:scaleX="0"
+                android:scaleY="0"
+                motion:motionTarget="@id/toolbarImage" />
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="80"
+                motion:motionTarget="@id/toolbarTitle" />
+
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="95"
+                motion:motionTarget="@id/toolbarTitle" />
+
+        </KeyFrameSet>
+
+    </Transition>
+</MotionScene>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    app:layoutDescription="@xml/youtube_scene"
+    tools:ignore="contentDescription">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="56dp"
+        tools:listitem="@layout/youtube_item_main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/viewContainer"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#fff"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/top_image_container"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="#fff"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewContainer"
+        app:layout_constraintEnd_toEndOf="@+id/viewContainer"
+        app:layout_constraintStart_toStartOf="@+id/viewContainer"
+        app:layout_constraintTop_toTopOf="@+id/viewContainer" />
+
+    <ImageView
+        android:id="@+id/image_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:elevation="4dp"
+        android:src="@drawable/ic_play"
+        android:tint="#505050"
+        app:layout_constraintBottom_toBottomOf="@id/viewContainer"
+        app:layout_constraintEnd_toStartOf="@id/image_clear"
+        app:layout_constraintTop_toTopOf="@id/viewContainer" />
+
+    <ImageView
+        android:id="@+id/image_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:elevation="4dp"
+        android:src="@drawable/ic_close"
+        android:tint="#505050"
+        app:layout_constraintBottom_toBottomOf="@id/viewContainer"
+        app:layout_constraintEnd_toEndOf="@id/viewContainer"
+        app:layout_constraintTop_toTopOf="@id/viewContainer" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="4dp"
+        android:alpha="1"
+        android:text="Title"
+        app:layout_constraintEnd_toStartOf="@+id/image_play"
+        app:layout_constraintStart_toEndOf="@+id/top_image"
+        app:layout_constraintTop_toTopOf="@+id/viewContainer" />
+
+    <ImageView
+        android:id="@+id/top_image"
+        android:layout_width="140dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:elevation="4dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image2"
+        app:layout_constraintBottom_toBottomOf="@id/viewContainer"
+        app:layout_constraintStart_toStartOf="@id/viewContainer"
+        app:layout_constraintTop_toTopOf="@id/viewContainer" />
+
+
+    <FrameLayout
+        android:id="@+id/recyclerview_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewContainer"
+        app:layout_constraintEnd_toEndOf="@+id/viewContainer"
+        app:layout_constraintStart_toStartOf="@+id/viewContainer"
+        app:layout_constraintTop_toBottomOf="@+id/top_image" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_front"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewContainer"
+        app:layout_constraintEnd_toEndOf="@+id/viewContainer"
+        app:layout_constraintStart_toStartOf="@+id/viewContainer"
+        app:layout_constraintTop_toBottomOf="@+id/top_image" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#F6F6F6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
